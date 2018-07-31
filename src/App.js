@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-
-import Header from './components/header/header'
-import MainCarousel from './components/main-carousel/main-carousel'
-import MovieList from './components/movieList'
+import {HashRouter, Route, Switch} from 'react-router-dom';
+import Home from './components/home/home'
+import MovieDetail from './components/movieDetails/movieDetails'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header/>
-        <MainCarousel/>
-        <MovieList/>
+        <HashRouter>
+          <Switch>
+
+          <Route exact path="/" component={Home} />
+          <Route path="/:movieID" component={MovieDetail} />
+
+          </Switch>
+        </HashRouter>
       </div>
     );
   }

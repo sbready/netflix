@@ -32,7 +32,6 @@ class Header extends Component {
                 Series
                 <Search/>
                 <Profile/>
-                {this.state.movieID}
             </div>
         )
     }

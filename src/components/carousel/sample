@@ -1,0 +1,46 @@
+
+// for( let i = 0; i < movies.length; i++ ){
+//     if ( movies[i] < 4 ) {
+//        return <img src={`${BACKDROP_PATH}${movies.backdrop_path}`} />
+//     }
+// }
+
+
+  // let selectedMovies = []
+            // let { movies } = res.data.results
+            // for( let i = 0; i < movies.length; i++ ) {
+            //     if( movies[i] < 4 ) {
+            //         selectedMovies.push
+            //     }
+            // }
+
+
+            {/* { 
+                            movies.map( movies => (
+                                <img src={`${BACKDROP_PATH}${movies.backdrop_path}`} />
+                            ))
+                        } */}
+
+
+                    <img src={`${BACKDROP_PATH}${movies.backdrop_path}`} />
+
+
+
+ {/* {
+                        caroList.map(movie => (
+                            <div key={movie.id} movie={movie}>
+                                <img src={`${BACKDROP_PATH}${movie.backdrop_path}`} />
+                            </div>
+                        ))
+                    } */}
+
+
+     // const caroList = selectedMovies.map( ( e, i ) => {
+        //     this.setState({ caroList: {
+        //         key: e.id, 
+        //         backdrop_path: e.backdrop_path, 
+        //         overview: e.overview, 
+        //         release_date: e.release_date, 
+        //         title: e.title, 
+        //         vote_average: e.vote_average}}
+        // )

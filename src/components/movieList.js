@@ -16,7 +16,8 @@ class MovieList extends Component {
         super( props )
 
         this.state = {
-            movies: []
+            movies: [],
+            movieID: ''
         }
     }
 
@@ -31,16 +32,17 @@ class MovieList extends Component {
 
     render(){
         const { movies } = this.state
-        console.log( movies )
-
         return(
-            <MovieGrid>
-                {
-                    movies.map( movie => (
-                        <Movie key={movie.id} movie={movie} />
-                    ))
-                }
-            </MovieGrid>
+            <div>
+                <h3>Trending Movies</h3>
+                <MovieGrid>
+                    {
+                        movies.map( movie => (
+                            <Movie key={movie.id} movie={movie}/>
+                        ))
+                    }
+                </MovieGrid>
+            </div>
         )
     }
 }
