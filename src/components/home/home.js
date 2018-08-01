@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from './../header/header'
-import Carousel from './../carousel/carousel'
+import StaticCarousel from './../StaticCarousel/StaticCarousel'
 import MovieList from './../movieList'
 import Footer from './../footer'
 
@@ -10,7 +10,7 @@ class Home extends Component {
         return(
             <div>
                 <Header/>
-                <Carousel/>
+                <StaticCarousel/>
                 <MovieList/>
                 <Footer/>
             </div>

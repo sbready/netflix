@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
 import axios from 'axios'
-import './carousel.css'
+import './MainCarousel.css'
 
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 

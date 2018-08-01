@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import Search from './search/search'
 import Profile from './profile/profile'
+import { NavLink } from 'react-router-dom'
+import Logo from './../../assets/images/Netflix-logo.png'
 
 class Header extends Component {
     constructor( props ){
@@ -26,8 +28,10 @@ class Header extends Component {
     render(){
         return(
             <div className="header">
-                Netflix
-                Home 
+                <NavLink exact activeClassName='selected-link' to='/'>
+                    <img src={Logo} alt='Netflix Logo'/>
+                </NavLink>
+                <NavLink exact activeClassName='selected-link' to='/'>Home</NavLink>
                 Movies
                 Series
                 <Search/>
