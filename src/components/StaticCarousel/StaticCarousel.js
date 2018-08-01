@@ -4,7 +4,7 @@ import FirstFeatured from './../featuredMovies/FirstFeatured'
 import SecondFeatured from './../featuredMovies/SecondFeatured'
 import ThirdFeatured from './../featuredMovies/ThirdFeatured'
 
-class StaticCarousel extends Component{
+class StaticCarousel extends Component {
     render(){
         return(
             <Carousel 
@@ -16,9 +16,9 @@ class StaticCarousel extends Component{
                 interval={5000} 
                 transitionTime={700}
             >
-                <FirstFeatured/>
-                <SecondFeatured/>
-                <ThirdFeatured/>
+                <FirstFeatured />
+                <SecondFeatured />
+                <ThirdFeatured />
             </Carousel>
         )
     }

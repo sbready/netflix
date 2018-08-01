@@ -10,47 +10,78 @@ class FirstFeatured extends Component {
         super( props )
 
         this.state = {
-            movies: []
+            movies: [],
+            movieID: '',
+            credits: []
         }
     }
 
-    componentDidMount(){
-        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=c9f7859b271c27cb5b424e6c417e384f&language=en-US`)
+    async componentWillMount(){
+        await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=c9f7859b271c27cb5b424e6c417e384f&language=en-US`)
         .then( res => {
             this.setState({
-                movies: res.data.results[0]
+                movieID: res.data.results[0].id
             })
         })
+
+        await axios.get(`https://api.themoviedb.org/3/movie/${this.state.movieID}?api_key=c9f7859b271c27cb5b424e6c417e384f&language=en-US&append_to_response=release_dates`)
+        .then( res => {
+            this.setState({
+                movies: res.data
+            })
+        })
+
+        await axios.get(`https://api.themoviedb.org/3/movie/${this.state.movieID}/credits?api_key=c9f7859b271c27cb5b424e6c417e384f&language=en-US`)
+        .then( res => {
+            this.setState({
+                credits: res.data
+            })
+        })
+
     }
 
     render(){
         const { movies } = this.state
+        const { credits } = this.state
+        const genre = this.state.movies.genres
         console.log(movies)
+        console.log(credits)
+        console.log(genre)
+
+        var d = new Date(`${movies.release_date}`);
+        var newDate = d.getFullYear();
+
         return(
             <div className="carousel-item" >
                 <div className="box-left"></div>
-                {/* <div className="movie-image" style={`${BACKDROP_PATH}/5qxePyMYDisLe8rJiBYX8HKEyv2.jpg`}></div> */}
+                <div className="movie-image">
+                    <img src={`${BACKDROP_PATH}${movies.backdrop_path}`}/>
+                </div>
                 <div className="title-info">
-                    <h2></h2>
-                    <h3>96% Match 2014 PG-13</h3>
-                    <p className="overview">With Humanity Teetering on the bring of extinction, a group of astronauts travels through a wormhole in search of another inhabitable planet.</p>
-
+                    <h2>{movies.title}</h2>
+                    <h3>{movies.vote_average}/10 {newDate} {'rating'}</h3>
+                    <p className="overview">{movies.overview}</p>
+                    
                     <div className="up-down">
                         <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
                         <i className="fa fa-thumbs-o-down" aria-hidden="true"></i>
 
                     </div>
 
-                    <p className="overview">Starring:
-                        <span className="hover"> Mathew McConaughey</span>,
-                        <span className="hover"> Anne Hathaway</span>,
-                        <span className="hover"> Jessica Chastain</span>
-                    </p>
+                    {/* <p className="overview">Starring:
+                        <span className="hover">{credits.cast[0].name}</span>,
+                        <span className="hover">{credits.cast[1].name}</span>,
+                        <span className="hover">{credits.cast[2].name}</span>
+                    </p> */}
 
-                    <p className="overview">Genre:
-                        <span className="hover"> Sci-fi</span>,
-                        <span className="hover"> Fantasy</span>,
-                        <span className="hover"> Mystery</span>
+                    <p className="overview">Genre: 
+                        {/* {
+                            genre.map( genre => {
+                                return <span className="hover" key={genre.id}>{genre.name}</span>
+                            })
+                        } */}
+                      {/* <span className="hover" >{genre[0].name}</span> */}
+
                     </p>
                 </div>
             </div>
