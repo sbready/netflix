@@ -51,6 +51,10 @@ class FirstFeatured extends Component {
         var d = new Date(`${movies.release_date}`);
         var newDate = d.getFullYear();
 
+        var runtimeInMinutes = (`${movies.runtime}`)
+        var minutes = runtimeInMinutes % 60;
+        var hours = (runtimeInMinutes - minutes) / 60;
+
         return(
             <div className="carousel-item" >
                 <div className="box-left"></div>
@@ -59,7 +63,7 @@ class FirstFeatured extends Component {
                 </div>
                 <div className="title-info">
                     <h2>{movies.title}</h2>
-                    <h3>{movies.vote_average}/10 {newDate} {'rating'}</h3>
+                    <h3>{movies.vote_average}/10 {newDate} {'rating'} {hours+'h'+minutes+'m'}</h3>
                     <p className="overview">{movies.overview}</p>
                     
                     <div className="up-down">
