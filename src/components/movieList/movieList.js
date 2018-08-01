@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import Movie from './movie'
+import Movie from './../movie'
+import './movieList.css'
 
 const MovieGrid = styled.div`
     display: grid;
@@ -42,6 +43,25 @@ class MovieList extends Component {
                         ))
                     }
                 </MovieGrid>
+
+
+                <div class="row">
+                    <div class="row__inner">
+
+                        <div class="tile">
+                            <div class="tile__media">
+                                <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt=""  />
+                            </div>
+                            <div class="tile__details">
+                                <div class="tile__title">
+                                    Top Gear
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         )
     }

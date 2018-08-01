@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from './../header/header'
 import StaticCarousel from './../StaticCarousel/StaticCarousel'
-import MovieList from './../movieList'
+import MovieList from './../movieList/movieList'
 import Footer from './../footer'
 
 class Home extends Component {
