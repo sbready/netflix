@@ -10,8 +10,8 @@ class StaticCarousel extends Component {
             <Carousel 
                 showArrows={true} 
                 showThumbs={false} 
-                infiniteLoop={true} 
-                autoPlay={true} 
+                infiniteLoop={false} 
+                autoPlay={false} 
                 showStatus={false} 
                 interval={5000} 
                 transitionTime={700}
