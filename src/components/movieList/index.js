@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import Movie from './../movie'
+import Movie from '../movie'
 import './movieList.css'
 
 const MovieGrid = styled.div`
@@ -33,6 +33,7 @@ class MovieList extends Component {
 
     render(){
         const { movies } = this.state
+
         return(
             <div>
                 <h3>Trending Movies</h3>
@@ -46,21 +47,20 @@ class MovieList extends Component {
 
                 <div className="row">
                     <div className="row__inner">
-
                         <div className="tile">
                             <div className="tile__media">
-                                {/* {
+                                {
                                     movies.map( movie => (
                                         <Movie key={movie.id} movie={movie}/>
                                     ))
-                                } */}
+                                }
                                 <img className="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt=""  />
                             </div>
-                            {/* <div class="tile__details">
+                            <div class="tile__details">
                                 <div class="tile__title">
                                     Top Gear
                                 </div>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>

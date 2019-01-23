@@ -1,0 +1,23 @@
+.carousel {
+    display: flex;
+}
+
+.slide-arrow {
+    fill: black;
+    height: 50px;
+    width: 50px;
+}
+
+.left {
+    position: absolute;
+    left: 0;
+}
+
+.right {
+    position: absolute;
+    right: 0;
+}
+
+.hover:hover {
+    text-decoration: underline;
+}

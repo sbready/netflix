@@ -1,0 +1,36 @@
+/* .hp-amod-dot {
+    display: inline-block;
+    width: 50px;
+    margin: 0 5px;
+    padding: 5px 0;
+    cursor: pointer;
+
+    @media @xxsmall {
+        width: 40px;
+    }
+
+    .dot-contents {
+        background: @white-color;
+        height: 2px;
+        opacity: 0.3;
+        transition: opacity 0.3s ease-in;
+    }
+
+    .dot-animation {
+        background: @black-light-color;
+        height: 2px;
+    }
+
+    &.active-dot {
+        cursor: default;
+
+        .dot-contents {
+            opacity: 0.9;
+
+            @media @small {
+                background: @gray-blue-color;
+                border-color: @gray-blue-color;
+            }
+        }
+    }
+} */

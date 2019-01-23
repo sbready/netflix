@@ -1,20 +1,16 @@
 import React, { Component } from 'react'
-import Slider from 'react-slick'
 import axios from 'axios'
 import './MainCarousel.css'
 
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 
 class MainCarousel extends Component {
-    constructor( props ) {
-        super( props )
 
-        this.state = {
-            movies: [],
-            caroList: {}
-        }
-        
+    state = {
+        movies: [],
+        caroList: {}
     }
+
 
     async componentDidMount(){
         await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=c9f7859b271c27cb5b424e6c417e384f&language=en-US`)

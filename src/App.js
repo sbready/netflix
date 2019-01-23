@@ -1,24 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import {HashRouter, Route, Switch} from 'react-router-dom';
-import Home from './components/home/home'
-import MovieDetail from './components/movieDetails/movieDetails'
+import Header from './components/Header';
+import Home from './components/Home';
+import Footer from './components/Footer';
+import Router from './router';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <HashRouter>
-          <Switch>
-
-          <Route exact path="/" component={Home} />
-          <Route path="/:movieID" component={MovieDetail} />
-
-          </Switch>
-        </HashRouter>
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div className="App">
+      <Header />
+      <Router />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

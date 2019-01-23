@@ -39,11 +39,7 @@ class SecondFeatured extends React.Component {
     }
 
     render(){
-        // setting state variables
-        const { movies } = this.state
-        const { credits } = this.state
-        const { genres } = this.state
-        const { rating } = this.state
+        const { movies, credits, genres, rating, movieID } = this.state
 
         // setting movie release date
         var d = new Date(`${movies.release_date}`);

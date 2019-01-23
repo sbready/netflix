@@ -39,11 +39,7 @@ class FirstFeatured extends React.Component {
     }
 
     render() {
-        // setting state variables
-        const { movies } = this.state
-        const { credits } = this.state
-        const { genres } = this.state
-        // const { rating } = this.state
+        const { movies, credits, genres, rating, movieID } = this.state
 
         // setting movie release date
         let d = new Date(`${movies.release_date}`);
@@ -62,7 +58,7 @@ class FirstFeatured extends React.Component {
                 </div>
                 <div className="title-info">
                     <h2>{movies.title}</h2>
-                    {/* <h3>{movies.vote_average}/10 {newDate} {rating} {hours + 'h' + minutes + 'm'}</h3> */}
+                    <h3>{movies.vote_average}/10 {newDate} {rating} {hours + 'h' + minutes + 'm'}</h3>
                     <p className="overview">{movies.overview}</p>
 
                     <div className="up-down">

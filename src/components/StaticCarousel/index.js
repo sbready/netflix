@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Carousel } from 'react-responsive-carousel'
-import FirstFeatured from './../featuredMovies/FirstFeatured'
-import SecondFeatured from './../featuredMovies/SecondFeatured'
-import ThirdFeatured from './../featuredMovies/ThirdFeatured'
+import FirstFeatured from '../featuredMovies/FirstFeatured'
+import SecondFeatured from '../featuredMovies/SecondFeatured'
+import ThirdFeatured from '../featuredMovies/ThirdFeatured'
 
 class StaticCarousel extends Component {
     render(){

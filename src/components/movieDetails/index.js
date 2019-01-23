@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Overdrive from 'react-overdrive'
 import axios from 'axios'
-import Header from './../header/header'
 
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 
@@ -55,7 +54,6 @@ class MovieDetail extends Component {
 
         return(
             <div>
-                <Header/>
                 <MovieWrapper backdrop={`${BACKDROP_PATH}${movies.backdrop_path}`}>
                     <Overdrive id={movies.id}>
                         <MovieInfo>

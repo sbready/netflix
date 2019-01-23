@@ -5,13 +5,13 @@ const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 
 class ThirdFeatured extends React.Component {
 
-        state = {
-            movies: [],
-            movieID: '',
-            credits: null,
-            genres: '',
-            rating: ''
-        }
+    state = {
+        movies: [],
+        movieID: '',
+        credits: null,
+        genres: '',
+        rating: ''
+    }
 
     async componentWillMount(){
         let movieID = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=c9f7859b271c27cb5b424e6c417e384f&language=en-US`)
@@ -27,7 +27,7 @@ class ThirdFeatured extends React.Component {
         genres = genres.data.genres
 
         let rating = await axios.get(`https://api.themoviedb.org/3/movie/${movieID}?api_key=c9f7859b271c27cb5b424e6c417e384f&language=en-US&append_to_response=release_dates`)
-        rating = rating.data.release_dates.results[17].release_dates[0].certification
+        // rating = rating.data.release_dates.results[17].release_dates[0].certification
 
         this.setState({
             movieID,
@@ -39,11 +39,7 @@ class ThirdFeatured extends React.Component {
     }
     
     render(){
-        // setting state variables
-        const { movies } = this.state
-        const { credits } = this.state
-        const { genres } = this.state
-        const { rating } = this.state
+        const { movies, credits, genres, rating, movieID } = this.state
 
         // setting movie release date
         var d = new Date(`${movies.release_date}`);
@@ -62,7 +58,7 @@ class ThirdFeatured extends React.Component {
                 </div>
                 <div className="title-info">
                     <h2>{movies.title}</h2>
-                    <h3>{movies.vote_average}/10 {newDate} {rating} {hours + 'h' + minutes + 'm'}</h3>
+                    {/* <h3>{movies.vote_average}/10 {newDate} {rating} {hours + 'h' + minutes + 'm'}</h3> */}
                     <p className="overview">{movies.overview}</p>
                     
                     <div className="up-down">
